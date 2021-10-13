@@ -2,7 +2,7 @@
 
 This website allows users to view the essential albums of any artist/band of a selected genre. An "essential album" usually means any work that has critical, commercial, or public acclaim. The best metric to compare an album is through ratings (profession or personal), how much it charted (and for how long), and award wins or nominations.
 
-Unfortunately, there are no readily accessible public APIs to gather all information I wanted on an album or the artists/bands. So I decided to create an API to carry the information and pass it to my website. 
+Unfortunately, there are no readily accessible public APIs to gather all the information I wanted on an album or the artists/bands. So I decided to create an API to carry the information and pass it to my website. 
 
 
 ## Website Home Page (top part)
