@@ -1,7 +1,10 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
 
-// Write your JavaScript code.
+// We display albums of an artist in either critial or commerical order.
+
+// When the user clicks on an input, the JavaScript function calls the controller to
+// return the list of albums back to the view in a different sorted order. 
+
+//  We do these calls by changing the url address. 
 
 function sortByCritics(id) {
     window.location.href = "/Artist/Details/"+String(id);
