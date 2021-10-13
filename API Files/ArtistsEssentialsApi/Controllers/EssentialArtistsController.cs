@@ -22,6 +22,8 @@ namespace ArtistsEssentialsApi.Controllers
         }
 
         // GET: api/EssentialArtists
+        // or
+        // GET: api/EssentialArtists?genre=
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EssentialArtist>>> GetEssentialArtists(string genre)
         {
