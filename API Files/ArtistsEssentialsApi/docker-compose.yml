@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    ms-sql-server:
+        image: "mcr.microsoft.com/mssql/server:2019-latest"
+        environment:
+          ACCEPT_EULA: "Y"
+          SA_PASSWORD: "<YourStrong@Passw0rd>"
+          MSSQL_PID: "Express"
+        volumes:
+            - sqlvolume:/var/opt/mssql
+        ports:
+            - "1433:1433"
+    essentials-api:
+        build: .
+        ports:
+            - "8080:80"
+volumes:
+    sqlvolume:
