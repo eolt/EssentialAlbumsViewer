@@ -1,5 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+
 .container {
     position: relative;
     text-align: center;
@@ -101,7 +100,8 @@ body {
 }
 
 
-/* Home Page styles */
+/* Home Page Styles 
+-------------------------------------------------- */
 .home-page-img {
     margin-top: 5%;
     filter: brightness(50%);
@@ -162,7 +162,8 @@ body {
 
 }
 
-/* Artists/Albums Home page */
+/* Artists/Albums Home Page Style 
+-------------------------------------------------- */
 .hero {
     height: 15rem;
     position: relative;
@@ -179,7 +180,6 @@ body {
     background: url("../images/albums_cover.jpg") center/cover no-repeat;
     filter:brightness(75%);
 }
-
 
 .hero-container {
     position: absolute;
