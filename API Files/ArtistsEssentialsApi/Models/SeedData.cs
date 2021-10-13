@@ -18,7 +18,8 @@ namespace ArtistsEssentialsApi.Models
                 {
                     return;
                 }
-
+                
+                //  Used when testing "essentialArtists" api
                 context.EssentialArtists.AddRange(
                     new EssentialArtist
                     {
@@ -38,6 +39,8 @@ namespace ArtistsEssentialsApi.Models
                     ) ;
 
                 /*
+                //  Used when testing "essentialAlbums" api. 
+                //  These lines of code cannot run during or before "essential artists" api as the artist id won't exist. 
                  context.EssentialAlbums.AddRange(
                      new EssentialAlbum
                      {
