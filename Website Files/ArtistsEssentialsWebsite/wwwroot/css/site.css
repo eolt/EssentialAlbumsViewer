@@ -1,0 +1,208 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/* Genre Tags Style
+-------------------------------------------------- */
+
+.tags-wrapper {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.tag {
+    background-color: mediumpurple;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    transition: var(--transition);
+    padding: 0.75rem 0;
+}
+
+.tag:hover {
+    text-decoration:none;
+    filter:brightness(75%);
+    color:white;
+}
+
+.tag h5 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 576px) {
+    .tags-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .tags-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* Home Page styles */
+.home-page-img {
+    margin-top: 5%;
+    filter: brightness(50%);
+    width: 100%;
+    display: block;
+    border-radius: 0.25rem;
+}
+
+.home-page-title {
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.home-page {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.home-page-btn {
+    color: white;
+    position: absolute;
+    display:block;
+    transform: translate(-50%, -50%);
+    top: 90%;
+    left: 50%;
+}
+
+
+@media screen and (min-width: 0px) {
+    .home-page-img {
+        margin-top: 30%;
+    }
+
+    .home-page-title {
+        top:43%;
+    }
+
+    .home-page{
+        top: 60%;
+    }
+    .home-page-btn {
+        top:80%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .home-page-img {
+        margin-top: 5%;
+    }
+
+}
+
+/* Artists/Albums Home page */
+.hero {
+    height: 15rem;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+    border-radius: 0.25rem;
+}
+
+.hero-artist-header {
+    background: url("../images/search_2.jpg") center/cover no-repeat;
+}
+
+.hero-album-header {
+    background: url("../images/albums_cover.jpg") center/cover no-repeat;
+    filter:brightness(75%);
+}
+
+
+.hero-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.25rem;
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+    filter:brightness(100%);
+}
+
+@media only screen and (min-width: 768px) {
+    .hero-text h1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+}
