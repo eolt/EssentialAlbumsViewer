@@ -1,0 +1,163 @@
+﻿@model ArtistsEssentialsWebsite.Models.Album
+
+@{
+    ViewData["Title"] = "Create Album";
+}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="mb-3 font-weight-normal">New Album Form</h1>
+    </div>
+    <br />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <p class="lead text-muted display-4">Basic Information</p>
+        <div class="form-group form-row">
+            <div class="form-group" hidden>
+                <label asp-for="EssentialArtistId" class="control-label"></label>
+                <input asp-for="EssentialArtistId" class="form-control" value="@long.Parse(Context.Request.Query["artistId"])" hidden />
+                <span asp-validation-for="EssentialArtistId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="Title" class="col-sm-2 col-form-label">Album Title</label>
+                <div class="col-sm-10">
+                    <input asp-for="Title" class="form-control" />
+                </div>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="Genre" class="col-sm-2 col-form-label">Album Genre</label>
+                <div class="col-sm-10">
+                    <input asp-for="Genre" class="form-control" />
+                </div>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="ReleaseYear" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="ReleaseYear" class="form-control" />
+                </div>
+                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="CreatedBy" class="col-sm-2 col-form-label">Created By<br />(collaboration or solo album)</label>
+                <div class="col-sm-10">
+                    <input asp-for="CreatedBy" class="form-control" />
+                </div>
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="CoverImage" class="col-sm-2 col-form-label">Link to Album Artwork</label>
+                <div class="col-sm-10">
+                    <input asp-for="CoverImage" class="form-control" />
+                </div>
+                <span asp-validation-for="CoverImage" class="text-danger"></span>
+            </div>
+        </div>
+        <p class="lead text-muted display-4">Commercial Success</p>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="BillboardPeakUS" class="col-sm-2 col-form-label">Peak in US Billboard Chart</label>
+                <div class="col-sm-10">
+                    <input asp-for="BillboardPeakUS" class="form-control" />
+                </div>
+                <span asp-validation-for="Certification" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="WeeksOnChartUS" class="col-sm-2 col-form-label">Weeks on US Chart</label>
+                <div class="col-sm-10">
+                    <input asp-for="WeeksOnChartUS" class="form-control" />
+                </div>
+                <span asp-validation-for="WeeksOnChartUS" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="Certification" class="col-sm-2 col-form-label">RIAA Certification</label>
+                <div class="col-sm-10">
+                    <input asp-for="Certification" class="form-control" />
+                </div>
+                <span asp-validation-for="Certification" class="text-danger"></span>
+            </div>
+        </div>
+
+        <p class="lead text-muted display-4">Critical Success</p>
+        <p class="lead text-muted">(Ratings)</p>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="PitchforkRating" class="col-sm-2 col-form-label">Pitchfork<br />(0 - 10)</label>
+                <div class="col-sm-10">
+                    <input asp-for="PitchforkRating" class="form-control" />
+                </div>
+                <span asp-validation-for="PitchforkRating" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="MetacriticRating" class="col-sm-2 col-form-label">Metacritic<br />(0 - 100)</label>
+                <div class="col-sm-10">
+                    <input asp-for="MetacriticRating" class="form-control" />
+                </div>
+                <span asp-validation-for="MetacriticRating" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="RollingStoneRating" class="col-sm-2 col-form-label">Rolling Stone<br />(0 - 5)</label>
+                <div class="col-sm-10">
+                    <input asp-for="RollingStoneRating" class="form-control" />
+                </div>
+                <span asp-validation-for="RollingStoneRating" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="RateYourMusicRating" class="col-sm-2 col-form-label">Rate Your Music<br />(0 - 5)</label>
+                <div class="col-sm-10">
+                    <input asp-for="RateYourMusicRating" class="form-control" />
+                </div>
+                <span asp-validation-for="RateYourMusicRating" class="text-danger"></span>
+            </div>
+        </div>
+        <p class="lead text-muted display-4">Awards Success</p>
+        <p class="lead text-muted">(Grammy noms and wins)</p>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="GrammyNominations" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="GrammyNominations" class="form-control" placeholder="0" value="0" />
+                </div>
+                <span asp-validation-for="GrammyNominations" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group form-row">
+            <div class="input-group mx-sm-5 mb-2">
+                <label asp-for="GrammyWins" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="GrammyWins" class="form-control" placeholder="0" value="0" />
+                </div>
+                <span asp-validation-for="GrammyWins" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-floating">
+            <input type="submit" value="Create" class="btn btn-lg btn-primary" />
+            <a class="btn btn-lg btn-secondary" asp-action="Details" asp-controller="Artist" asp-route-id="@long.Parse(Context.Request.Query["artistId"])">Exit</a>
+        </div>
+    </form>
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

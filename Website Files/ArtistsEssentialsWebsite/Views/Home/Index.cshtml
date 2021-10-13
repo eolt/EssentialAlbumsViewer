@@ -1,0 +1,36 @@
+﻿@{
+    var home_page_img = @"images\home_pg.jpg";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="d-flex h-100 text-center text-white" style="background-color: #11444D ">
+    <div class="container">
+        <main role="main" class="px-3">
+            <img src="@home_page_img" class="home-page-img"/>
+            <div class="text-center" style="background-color:red;">
+                <h1 class="display-4 home-page-title">Welcome</h1>
+                <p class="home-page lead">Find essential albums to some over your favorite artist of any particular genre. Or discover new music.</p>
+                <div class="home-page-btn">
+                    <a class="btn btn-lg btn-secondary" asp-controller="Artist" asp-action="Index">View Artists</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer text-muted mt-auto">
+        <div class="container">
+            &copy; 2021 - ArtistsEssentialsWebsite
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

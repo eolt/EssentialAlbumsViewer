@@ -1,0 +1,136 @@
+﻿@model IEnumerable<ArtistsEssentialsWebsite.Models.Album>
+
+@{
+    ViewData["Title"] = ViewData["artistName"] + "\'s Essential Albums";
+}
+
+<div class="container row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">@ViewData["Title"]</h1>
+        <h3 class="lead text-muted">Notice Your Favorite Album Missing?</h3>
+        <p>
+            Click
+            <a asp-controller="Album" asp-action="Create" asp-route-artistId="@ViewData["artistID"]">
+                link
+            </a>
+            to add a new album.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="list-group list-group-horizontal align-items-stretch">
+        <label class="list-group-item border-0">
+            <input class="form-check-input me-1" type="radio" onclick="sortByCritics(@ViewData["artistID"])" @ViewData["isChecked_cr"]>
+            Order By Critical Aclaim
+        </label>
+        <label class="list-group-item border-0">
+            <input class="form-check-input me-1" type="radio" onclick="sortByOnline(@ViewData["artistID"])" @ViewData["isChecked_on"]>
+            Order By Online Recognition
+        </label>
+        <label class="list-group-item border-0">
+            <input class="form-check-input me-1" type="radio" onclick="sortByCommercial(@ViewData["artistID"])" @ViewData["isChecked_co"]>
+            Order By Commercial Success
+        </label>
+        <label class="list-group-item border-0">
+            <input class="form-check-input me-1" type="radio" onclick="sortByAwards(@ViewData["artistID"])" @ViewData["isChecked_aw"]>
+            Order By Grammy Awards
+        </label>
+    </div>
+    
+</div>
+
+
+<section class="list-group" style="text-align:center; margin-top:25px;">
+    @foreach (var item in Model)
+    {
+        <div class="card border-light mb-5" style="max-width: 1110px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <img src="@item.CoverImage" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </h3>
+                        <h5 class="card-title">By</h5>
+                        <h4 class="card-title">
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </h4>
+                        <p class="card-title"><small class="text-muted">Released: @Html.DisplayFor(modelItem => item.ReleaseYear)</small></p>
+
+                        @if (item.BillboardPeakUS.HasValue)
+                        {
+                            <p class="catd-text text-left">
+                                U.S. Billboard Peak: #@Html.DisplayFor(modelItem => item.BillboardPeakUS)
+                            </p>
+
+                            <p class="catd-text text-left">
+                                Weeks on Chart: #@Html.DisplayFor(modelItem => item.WeeksOnChartUS)
+                            </p>
+                        }
+                 
+                        @if (item.RollingStoneRating.HasValue)
+                        {
+                            <p class="catd-text text-left">
+                                Rolling Stone Rating: #@Html.DisplayFor(modelItem => item.RollingStoneRating)
+                            </p>
+                        }
+
+                        @if (item.PitchforkRating.HasValue)
+                        {
+                            <p class="catd-text text-left">
+                                Pitchfork Rating: #@Html.DisplayFor(modelItem => item.PitchforkRating)
+                            </p>
+                        }
+
+                        @if (item.RateYourMusicRating.HasValue)
+                        {
+                            <p class="catd-text text-left">
+                                RateYourMusic Rating: #@Html.DisplayFor(modelItem => item.RateYourMusicRating)
+                            </p>
+                        }
+
+                        @if (item.MetacriticRating.HasValue)
+                        {
+                            <p class="catd-text text-left">
+                                Metacritic Rating: #@Html.DisplayFor(modelItem => item.MetacriticRating)
+                            </p>
+                        }
+
+                        @if (item.GrammyNominations.HasValue)
+                        {
+                            <div style="display:inline-block;">
+                                <p class="card-text text-center">Nominations</p>
+                                <p class="catd-text text-center">
+                                    @Html.DisplayFor(modelItem => item.GrammyNominations)
+                                </p>
+                            </div>
+                        }
+
+
+                        @if (item.GrammyWins.HasValue)
+                        {
+                            <div style="display:inline-block; margin-left:15%">
+                                <p class="card-text text-center">Wins</p>
+                                <p class="catd-text text-center">
+                                    @Html.DisplayFor(modelItem => item.GrammyWins)
+                                </p>
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-sm btn-outline-secondary" asp-controller="Album" asp-action="Edit" asp-route-id="@item.Id">
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+            </div>
+        </div>
+    }
+</section>

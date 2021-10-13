@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ArtistsEssentialsWebsite.Models.Album>
+
+@{
+    ViewData["Title"] = "Album Page";
+}
+
+<section class="jumbotron text-center">
+    <div class="container ">
+        <h1 class="jumbotron-heading text-capitalize">@Context.Request.Query["genre"] Albums</h1>
+    </div>
+</section>
+
+<div class="album py-5">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height:auto; width: 100%; display: block;" src="@item.CoverImage" data-holder-rendered="true">
+                        <div class="card-body">
+                            <h4 class="card-text">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </h4>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@item.Id">
+                                        View
+                                    </a>
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@item.Id">
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
