@@ -1,1 +1,1 @@
-# Essential Albums Viewer Website
+# EssentialAlbumsViewer Website
