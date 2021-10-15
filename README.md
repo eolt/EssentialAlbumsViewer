@@ -10,8 +10,6 @@ The API carries information on an artist(s) and their essential albums. For each
 The web app makes a GET request to access information on an artist(s) or album. The website passes information from its Controller to the respected View. Users have the option to view and modify details on any album or artist. The website Controller makes POST/PUT requests to the API when handling modification or creation by a user.
 
 
-
-
 ## Website Home Page (top part)
 
 The home page displays each genre of the artist currently available. Users can orderly navigate through various artists.
